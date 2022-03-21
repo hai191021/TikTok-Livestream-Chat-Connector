@@ -1,4 +1,62 @@
-root = true
+root = true https://www.tiktok.com/@wolfoostories/live
+tiktokChatConnection . on ( 'chat' ,  data  =>  { 
+    console . log ( ` $ { data . uniqueId } ghi: $ { data . comment } ` ) ; 
+} )
+{ 
+    comment : 'bạn khỏe không?' , 
+    userId : '6776663624629974121' , 
+    uniqueId : 'zerodytester' , 
+    nickname : 'Zerody One' , 
+    profilePictureUrl : 'https: //p16-sign-va.tiktokcdn.com / ...' , 
+    followRole : 2 ,  // 0 = không ai; 1 = người theo dõi; 2 = bạn bè 
+    userBadges : [ 
+        { 
+            type : 'pm_mt_moderator_im' ,  
+            name : 'Moderator' 
+        } 
+    ] 
+}
+tiktokChatConnection . on ( 'gift' ,  data  =>  { 
+    if  ( data . gift . gift_type  ===  1  &&  data . gift . repeat_end  ===  0 )  { 
+        // Đang tiến hành => chỉ hiển thị 
+        bảng điều khiển tạm thời . log ( ` $ { data . uniqueId } đang gửi quà tặng $ { data . giftId } x $ { data . gift. số_lặp_lại } `); 
+    } else {
+        bảng điều khiểnrepeat_count cuối cùng
+        . log(` $ { data . uniqueId } đã gửi quà tặng $ { data . giftId } x $ { data . gift . repeat_count } `); }})
+    
+    { 
+  userId : '6776663624629974121' , 
+  uniqueId : 'zerodytester' , 
+  biệt hiệu : 'Zerody One' , 
+  profilePictureUrl : 'https: //p16-sign-va.tiktokcdn.com / ...' , 
+  gift : { 
+    gift_id : 5729 , 
+    gift_type : 2 , 
+    repeat_count : 1 , 
+    repeat_end : 0 , 
+    to_user_id : 6929592145315251000 
+  } , 
+  giftId : 5729 ,
+  // Thông tin mở rộng hiển thị nếu bạn đã bật tùy chọn 'enableExtendedGiftInfo' 
+  ExtendedGiftInfo : { 
+    description : 'sent Rose' , diamond_count : 1 , thời lượng : 1000 , biểu tượng : { avg_color : '# A3897C' , is_animated : false , url_list : [ // URL biểu tượng ... ] } , id : 5655 , image : { avg_color : '#FFEBEB' ,
+          is_animated : false , 
+      url_list : [ 
+        // URL hình ảnh ... 
+      ] 
+    } , 
+    is_broadcast_gift : false , 
+    is_displayed_on_panel : true , 
+    is_effect_befview : false , 
+    item_type : 1 , 
+    name : 'Rose' , 
+    type : 1 
+  } 
+}tiktokChatConnection . on ( 'roomUser' ,  data  =>  { 
+    console . log ( `Viewer Count: $ { data . viewerCount } ` ) ; 
+} )tiktokChatConnection . on ( 'like' ,  data  =>  { 
+    console . log ( ` $ { data . uniqueId } đã gửi $ { data . likeCount } lượt thích, tổng lượt thích: $ { data . totalLikeCount } ` ) ; 
+} )
 
 [*]
 charset = utf-8
